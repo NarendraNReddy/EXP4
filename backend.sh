@@ -10,8 +10,8 @@ Y="\e[33m"
 BL="\e[34m"
 N="\e[0m"
 
-echo "Enter password:"
-read DB_SERVER_PASSWORD
+#echo "Enter password:"
+#read DB_SERVER_PASSWORD
 #ExpenseApp@1
 
 VALIDATE()
@@ -52,4 +52,18 @@ then
 else 
     echo -e "user expense already present..$Y SKIPPING $N"    
 fi
+
+
+mkdir -p /app &>>$LOGFILE
+VALIDATE $? "app dir created"
+
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip  &>>$LOGFILE
+VALIDATE $? "backend code in /tmp directory"
+
+rm -rf /app/* &>>$LOGFILE
+VALIDATE $? "Remove everything in app"
+
+cd /app &>>$LOGFILE
+VALIDATE $? "Enter into app"
+
 
