@@ -10,8 +10,8 @@ Y="\e[33m"
 BL="\e[34m"
 N="\e[0m"
 
-#echo "Enter password:"
-#read DB_SERVER_PASSWORD
+echo "Enter password:"
+read DB_SERVER_PASSWORD
 #ExpenseApp@1
 
 VALIDATE()
@@ -71,5 +71,30 @@ VALIDATE $? "Unzip the backend code in app"
 
 npm install &>>$LOGFILE
 VALIDATE $? "Instllating the npm"
+
+cp -rf /home/ec2-user/EXP4/backend.service  /etc/systemd/system/backend.service &>>$LOGFILE
+VALIDATE $? "Backend.service is copied"
+
+
+systemctl daemon-reload &>>$LOGFILE
+VALIDATE $? "daemon-reload"
+
+
+systemctl start backend &>>$LOGFILE
+VALIDATE $? "start backend"
+
+systemctl enable backend &>>$LOGFILE
+VALIDATE $? "enable backend"
+
+
+dnf install mysql -y &>>$LOGFILE
+VALIDATE $? "install mysql client "
+
+
+mysql -h  db.daws78s-nnr.online -uroot -p${DB_SERVER_PASSWORD} < /app/schema/backend.sql &>>$LOGFILE
+VALIDATE $? "Unzip the backend code in app"
+
+systemctl restart backend &>>$LOGFILE
+VALIDATE $? "Unzip the backend code in app"
 
 
