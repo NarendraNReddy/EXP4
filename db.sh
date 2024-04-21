@@ -43,8 +43,9 @@ VALIDATE $? "enable mysql server"
 systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "start mysql server"
 
+#idempotency  
 mysql -h db.daws78s-nnr.online -uroot -p${DB_SERVER_PASSWORD} -e 'show databases' &>>$LOGFILE
-if [ $? -ne 0];
+if [ $? -ne 0 ];
 then 
     mysql_secure_installation --set-root-pass ${DB_SERVER_PASSWORD} &>>$LOGFILE
     VALIDATE $? "set password for mysql server"
