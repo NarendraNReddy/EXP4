@@ -55,6 +55,9 @@ VALIDATE $? "moved into hmtl folder"
 unzip /tmp/frontend.zip &>>$LOGFILE
 VALIDATE $? "unzip frontend code to html folder"
 
+cp -rf /home/ec2-user/EXP4/expense.conf  /etc/nginx/default.d/expense.conf  &>>$LOGFILE
+VALIDATE $? "Copy expense conf file"
+
 
 
 systemctl restart nginx &>>$LOGFILE
