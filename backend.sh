@@ -92,9 +92,9 @@ VALIDATE $? "install mysql client "
 
 
 mysql -h  db.daws78s-nnr.online -uroot -p${DB_SERVER_PASSWORD} < /app/schema/backend.sql &>>$LOGFILE
-VALIDATE $? "Unzip the backend code in app"
+VALIDATE $? "DB to backend connection"
 
 systemctl restart backend &>>$LOGFILE
-VALIDATE $? "Unzip the backend code in app"
+VALIDATE $? "Restart backend"
 
 
