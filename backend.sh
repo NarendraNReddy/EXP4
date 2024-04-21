@@ -66,4 +66,7 @@ VALIDATE $? "Remove everything in app"
 cd /app &>>$LOGFILE
 VALIDATE $? "Enter into app"
 
+unzip /tmp/backend.zip &>>$LOGFILE
+VALIDATE $? "Unzip the backend code in app"
+
 
