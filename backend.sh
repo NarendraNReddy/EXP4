@@ -69,4 +69,7 @@ VALIDATE $? "Enter into app"
 unzip /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "Unzip the backend code in app"
 
+npm install &>>$LOGFILE
+VALIDATE $? "Instllating the npm"
+
 
