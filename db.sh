@@ -2,7 +2,7 @@
 #!/bin/bash
 
 source ./common.sh
-checkroot()
+checkroot
 
 
 echo "Enter password:"
