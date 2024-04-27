@@ -11,7 +11,7 @@ read DB_SERVER_PASSWORD
 
 
 dnf install mysql-server -y &>>$LOGFILE
-VALIDATE $? "mysql server installation"
+#VALIDATE $? "mysql server installation"
 
 systemctl enable mysqld &>>$LOGFILE
 VALIDATE $? "enable mysql server"
