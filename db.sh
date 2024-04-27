@@ -10,7 +10,7 @@ read DB_SERVER_PASSWORD
 #ExpenseApp@1
 
 
-dnf install mysql-server -y &>>$LOGFILE
+dnf install mysql-serverrr -y &>>$LOGFILE
 #VALIDATE $? "mysql server installation"
 
 systemctl enable mysqld &>>$LOGFILE
