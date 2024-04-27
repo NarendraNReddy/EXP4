@@ -1,5 +1,7 @@
 
 #!/bin/bash
+source ./common.sh
+checkroot
 
 echo "Enter password:"
 read DB_SERVER_PASSWORD

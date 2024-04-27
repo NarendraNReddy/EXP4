@@ -5,6 +5,9 @@
 #read DB_SERVER_PASSWORD
 #ExpenseApp@1
 
+source ./common.sh
+checkroot
+
 
 
 
