@@ -11,6 +11,11 @@ N="\e[0m"
 
 set -e
 
+failure() {
+  echo "Failed at $lineno: $msg"
+}
+trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
+
 
 VALIDATE()
 {
