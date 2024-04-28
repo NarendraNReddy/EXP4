@@ -5,6 +5,6 @@ THRESHOLD=6
 
 while IFS= read -r line
 do 
-    DISK_USAGE_LIMIT=$(echo DISK_USAGE | awk -F " " '{print $6F}' | cut -d "%" -f1)
+    DISK_USAGE_LIMIT=$(echo DISK_USAGE)
     echo $DISK_USAGE_LIMIT
 done <<<$DISK_USAGE
