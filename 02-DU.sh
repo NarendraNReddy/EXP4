@@ -15,4 +15,4 @@ do
 done <<<$DISK_USAGE
 
 #echo "This is a test mail & Date $(date)" | mail -s "message" narendra.h1b@com
-echo "$FOLDER exceeds the $THRESHOLD, current usage:$DISK_USAGE_LIMIT | mail -s "disk usage" narendra.h1b@com"
+echo "$FOLDER exceeds the $THRESHOLD, current usage:$DISK_USAGE_LIMIT | mail -s "disk usage" narendra.h1b@com
