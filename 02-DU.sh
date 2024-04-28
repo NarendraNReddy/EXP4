@@ -13,3 +13,5 @@ do
         echo "Disk usage for $FOLDER is exceeds $THRESHOLD,current usage:$DISK_USAGE_LIMIT"
     fi
 done <<<$DISK_USAGE
+
+echo "This is a test mail & Date $(date)" | mail -s "message" narendra.h1b@com
