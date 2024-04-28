@@ -10,3 +10,7 @@ else
     echo "Folder does not exists"
     exit 1
 fi        
+
+FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
+
+echo $FILES
