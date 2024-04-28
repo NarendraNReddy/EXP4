@@ -1,4 +1,9 @@
 #!/bin/bash
 
 DISK_USAGE=$(df -hT | grep xfs)
-echo $DISK_USAGE
+THRESHOLD=6
+
+while IFS: read -r line
+do 
+    echo $line
+done <<<$DISK_USAGE
